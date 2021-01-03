@@ -1,0 +1,25 @@
+logging:
+  level: INFO
+  loggers:
+    com.asverma: DEBUG
+
+server:
+  type: default
+  maxThreads: 50
+  minThreads: 8
+  applicationConnectors:
+    - type: http
+      port: 9000
+  adminConnectors:
+    - type: http
+      port: 9001
+  requestLog:
+    appenders: []
+
+database:
+  driverClass: org.postgresql.Driver
+  user: root
+  password: rootpass
+  url: jdbc:postgresql://127.0.0.1:5432/postgres
+  properties:
+    charSet: UTF-8
