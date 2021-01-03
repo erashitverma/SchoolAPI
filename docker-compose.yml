@@ -4,6 +4,7 @@ services:
   postgres:
     container_name: postgres_container
     image: postgres
+    hostname: postgres
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: rootpass
@@ -14,5 +15,14 @@ services:
       - "5432:5432"
     restart: unless-stopped
 
+  schoolapi:
+    build: .
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    depends_on:
+      - postgres
+
 volumes:
   postgres:
+

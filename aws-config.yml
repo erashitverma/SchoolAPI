@@ -20,7 +20,7 @@ database:
   driverClass: org.postgresql.Driver
   user: root
   password: rootpass
-  url: jdbc:postgresql://postgres:5432/postgres
+  url: jdbc:postgresql://school-api-2.c8s85mwv7khu.eu-west-1.rds.amazonaws.com:5432/postgres
   properties:
     charSet: UTF-8
   maxWaitForConnection: 1s
