@@ -37,4 +37,7 @@ public interface StudentDAO extends WrapperInterface {
 
     @SqlUpdate("delete from courses_students where StudentId = :studentId and CourseId = :courseId")
     int deregisterStudent(@Bind("studentId") int studentId, @Bind("courseId") int courseId);
+
+    @SqlQuery("select  s2.studentid, s2.firstname ,s2.lastname from student s2 join courses_students cs on s2.studentid = cs.studentid where cs.courseId = :courseId")
+    List<Student> getCourseStudent(@Bind("courseId") int courseId);
 }

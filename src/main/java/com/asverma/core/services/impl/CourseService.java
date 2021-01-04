@@ -29,7 +29,7 @@ public class CourseService implements CRUDService<Course> {
     @Override
     public Course retrieveEntity(final int id) {
         final Course retrievedCourse = this.courseDAO.getById(id);
-        return ImmutableCourse.copyOf(retrievedCourse).withStudents(this.studentDAO.getAll()).withProfessors(this.professorDAO.getAll());
+        return ImmutableCourse.copyOf(retrievedCourse).withStudents(this.studentDAO.getCourseStudent(id)).withProfessors(this.professorDAO.getCourseProfessors(id));
 
     }
 

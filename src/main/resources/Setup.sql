@@ -27,7 +27,7 @@ CREATE TABLE professors (
 
 CREATE SEQUENCE professor_sequence start 999 increment 1;
 
-CREATE TABLE courses_student (
+CREATE TABLE courses_students (
     CourseId int NOT NULL,
     StudentId int NOT NULL,
     CONSTRAINT fk_course

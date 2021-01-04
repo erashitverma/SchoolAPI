@@ -37,4 +37,7 @@ public interface ProfessorDAO extends WrapperInterface {
 
     @SqlUpdate("delete from courses_professors where ProfessorId = :professorId and CourseId = :courseId")
     int deassignProfessor(@Bind("professorId") int professorId, @Bind("courseId") int courseId);
+
+    @SqlQuery("select  s2.professorid, s2.firstname ,s2.lastname from professors s2 join courses_professors cs on s2.professorid = cs.professorid where cs.courseId = :courseId")
+    List<Professor> getCourseProfessors(@Bind("courseId") int courseId);
 }
