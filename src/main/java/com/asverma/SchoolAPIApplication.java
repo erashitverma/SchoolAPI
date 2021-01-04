@@ -17,6 +17,8 @@ import io.dropwizard.Application;
 import io.dropwizard.jdbi3.JdbiFactory;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.federecio.dropwizard.swagger.SwaggerBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 
 public class SchoolAPIApplication extends Application<SchoolAPIConfiguration> {
 
@@ -32,6 +34,13 @@ public class SchoolAPIApplication extends Application<SchoolAPIConfiguration> {
     @Override
     public void initialize(final Bootstrap<SchoolAPIConfiguration> bootstrap) {
         // TODO: application initialization
+        // Add Swagger Bundle
+        bootstrap.addBundle(new SwaggerBundle<SchoolAPIConfiguration>() {
+            @Override
+            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(final SchoolAPIConfiguration configuration) {
+                return configuration.swaggerBundleConfiguration;
+            }
+        });
     }
 
     @Override

@@ -1,14 +1,13 @@
 package com.asverma;
 
-import io.dropwizard.Configuration;
-import io.dropwizard.db.DataSourceFactory;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import org.hibernate.validator.constraints.*;
-
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+
+import io.dropwizard.Configuration;
+import io.dropwizard.db.DataSourceFactory;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 
 public class SchoolAPIConfiguration extends Configuration {
     // TODO: implement service configuration
@@ -25,4 +24,7 @@ public class SchoolAPIConfiguration extends Configuration {
     public DataSourceFactory getDataSourceFactory() {
         return this.database;
     }
+
+    @JsonProperty("swagger")
+    public SwaggerBundleConfiguration swaggerBundleConfiguration;
 }
