@@ -13,10 +13,6 @@ import javax.annotation.Nullable;
 @JsonDeserialize(as = ImmutableStudent.class)
 public abstract class Student {
 
-    public static ImmutableStudent.Builder builder() {
-        return ImmutableStudent.builder();
-    }
-
     @Nullable
     public abstract Integer getStudentId();
 

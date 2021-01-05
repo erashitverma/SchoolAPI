@@ -16,9 +16,6 @@ import javax.annotation.Nullable;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class Course {
 
-    public static ImmutableCourse.Builder builder() {
-        return ImmutableCourse.builder();
-    }
 
     @Nullable
     public abstract Integer getCourseId();
