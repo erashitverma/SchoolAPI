@@ -56,7 +56,7 @@ public class StudentResource {
     @ApiOperation(value = "Update a student",
                   code = 200,
                   response = Student.class,
-                  httpMethod = "POST",
+                  httpMethod = "PUT",
                   produces = "application/json")
     public Response add(@Valid final Student student, @PathParam("id") final int id) {
         return Response.status(Response.Status.OK)
@@ -113,7 +113,7 @@ public class StudentResource {
     @ApiOperation(value = "Register a student for course",
                   code = 200,
                   response = Student.class,
-                  httpMethod = "POST",
+                  httpMethod = "PUT",
                   produces = "application/json")
     public Response register(@PathParam("id") final int id, @QueryParam("courseId") final int courseId) {
         this.studentService.registerStudent(id, courseId);
@@ -127,7 +127,7 @@ public class StudentResource {
     @ApiOperation(value = "Deregister a student for course",
                   code = 200,
                   response = Student.class,
-                  httpMethod = "POST",
+                  httpMethod = "PUT",
                   produces = "application/json")
     public Response deregister(@PathParam("id") final int id, @QueryParam("courseId") final int courseId) {
         this.studentService.deregisterStudent(id, courseId);

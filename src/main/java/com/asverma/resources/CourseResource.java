@@ -54,7 +54,7 @@ public class CourseResource {
     @ApiOperation(value = "Update a course",
                   code = 200,
                   response = Course.class,
-                  httpMethod = "POST",
+                  httpMethod = "PUT",
                   produces = "application/json")
     public Response add(@Valid final Course course, @PathParam("id") final int id) {
         return Response.status(Response.Status.OK)
