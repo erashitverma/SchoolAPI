@@ -18,9 +18,9 @@ Postman Collection
 ---
 https://www.getpostman.com/collections/82dde8cd5083e391bd7b
 
-Swagger
+Sample Course URL
 ---
-Get Course sample - api-internet-load-balancer-1890435678.us-east-1.elb.amazonaws.com/api/v1/courses/1001
+Get Course sample - http://api-internet-load-balancer-1890435678.us-east-1.elb.amazonaws.com/api/v1/courses/1001
 
 Swagger
 ---
