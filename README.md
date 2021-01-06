@@ -20,6 +20,10 @@ https://www.getpostman.com/collections/82dde8cd5083e391bd7b
 
 Swagger
 ---
+Get Course sample - api-internet-load-balancer-1890435678.us-east-1.elb.amazonaws.com/api/v1/courses/1001
+
+Swagger
+---
  http://api-internet-load-balancer-1890435678.us-east-1.elb.amazonaws.com/swagger
  
 ALB(AWS) Url
@@ -44,3 +48,4 @@ Next Steps/ Remaining work (Due to time restriction):
 * Use terraform for deployment.
 * Comment code correctly.
 * Improve docker compose file to run sql script at start of container.
+* Implement max/min professor and Max student limit in course
