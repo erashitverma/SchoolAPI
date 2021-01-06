@@ -29,6 +29,9 @@ public class CourseService implements CRUDService<Course> {
     @Override
     public Course retrieveEntity(final int id) {
         final Course retrievedCourse = this.courseDAO.getById(id);
+        if (retrievedCourse == null) {
+            throw new SchoolAPIException("Requested course doesn't exist", Response.Status.NOT_FOUND);
+        }
         return ImmutableCourse.copyOf(retrievedCourse).withStudents(this.studentDAO.getCourseStudent(id)).withProfessors(this.professorDAO.getCourseProfessors(id));
 
     }
