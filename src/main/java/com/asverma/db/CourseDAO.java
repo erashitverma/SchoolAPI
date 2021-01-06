@@ -13,7 +13,7 @@ import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import java.util.List;
 
 @RegisterRowMapper(CourseMapper.class)
-public interface CourseDAO extends WrapperInterface {
+public interface CourseDAO {
 
     @SqlUpdate("insert into courses (courseId, courseName, minProfessor, maxProfessor, maxStudents) values (nextval('course_sequence'),"
                                + " :course.courseName, :course.minProfessor, :course.maxProfessor, :course.maxStudents)")

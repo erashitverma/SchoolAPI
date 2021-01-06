@@ -13,7 +13,7 @@ import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import java.util.List;
 
 @RegisterRowMapper(StudentMapper.class)
-public interface StudentDAO extends WrapperInterface {
+public interface StudentDAO {
 
     @SqlUpdate("insert into student (studentId, firstName, lastName) values (nextval('student_sequence'), :student.firstName, :student.lastName)")
     @GetGeneratedKeys
